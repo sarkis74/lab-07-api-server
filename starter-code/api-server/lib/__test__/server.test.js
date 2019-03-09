@@ -4,6 +4,8 @@ const {server} = require('../../lib/server.js');
 const supertest = require('supertest');
 const mockRequest = supertest(server);
 
+server.start(8080);
+
 describe('web server', () => {
 
     it('should respond with a 500 on an error', () => {
@@ -47,3 +49,4 @@ describe('web server', () => {
     });
 
 });
+

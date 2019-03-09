@@ -1,0 +1,18 @@
+{
+  "record": [
+    {
+"_id": 1,
+"name": "gothic metal",
+"author": "Danzig",
+"title": "Mother",
+"description": "Thematically, the song is a rhetorical challenge to parents, primarily inspired by Tipper Gore who, along with the Parents Music Resource Center, introduced the Parental Advisory warning placed on albums that contain explicit content."
+    },
+  {
+"_id": 2,
+"name": "industrial rock",
+"author": "Nine Inch Nails",
+"title": "Into the Void",
+"description": "\"Into The Void\" is one of several songs on The Fragile that shares a melody with one or more other songs. \"Into the Void\" is a sister-track to \"La Mer,\" also from The Fragile; both songs grew out of the same initial track and feature the same bass line and melody. As well, the melody played by gamelan at the beginning of the song is echoed as a piano theme at the end of \"We're in This Together.\"  "
+    }
+  ]
+}
