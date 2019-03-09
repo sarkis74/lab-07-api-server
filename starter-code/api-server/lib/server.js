@@ -6,42 +6,27 @@ const app = express();
 
 const PORT = process.env.PORT || 8080;
 
-let db = [];
+const middleware = require('./api_middleware');
+
+let db = [];// Array to store values? simulating database?
 
 app.use(express.json());
 
 app.use( (req,res,next) => {
-    console.log('LOG:', req.method, req.path);
+    console.log('LOG:', req.method, req.path);// Logs HTTP verb and URL route
     next();
 });
 
-app.get('/posts', (req,res,next) => {
-    let count = db.length;
-    let results = db;
-    res.json({count,results});
-});
+app.get('/posts', middleware.getPosts);
 
-app.get('/posts/:id', (req,res,next) => {
-    let id = req.params.id;
-    let record = db.filter((record) => record.id === parseInt(id));
-    res.json(record[0]);
-});
+app.get('/posts/:id', middleware.getPostsId);
 
 
-app.post('/posts', (req,res,next) => {
-    let {name,author,title,article} = req.body;
-    let record = {name,author,title,article};
-    record.id = db.length + 1;
-    db.push(record);
-    res.json(record);
-});
+app.post('/posts', middleware.postPosts);
 
-app.put('/posts/:id', (req,res,next) => {
+app.put('/posts/:id', middleware.putPostsId);
 
-});
-
-app.delete('/posts/:id', (req,res,next) => {
-});
+app.delete('/posts/:id', middleware.deletePostsId);
 
 module.exports = {
     server: app,
@@ -50,3 +35,5 @@ module.exports = {
         app.listen(PORT, () => console.log(`Listening on ${PORT}`));
     },
 };
+
+
